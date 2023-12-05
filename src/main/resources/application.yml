@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: chat-application
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    url: jdbc:h2:mem:chat-application
+    driver-class-name: org.h2.Driver
+    username: admin
+    password: 12345
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog.xml
+  h2:
+    console:
+      enabled: true
+token:
+  signing:
+    key: 413F4428472B4B6250655368566D5970337336763979244226452948404D6351
+
+api:
+  version: 0.1
